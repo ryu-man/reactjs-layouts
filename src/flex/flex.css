@@ -1,0 +1,19 @@
+.layout.row {
+	display: flex;
+}
+.layout.row.reverse {
+	flex-direction: row-reverse;
+}
+.layout.row.inline {
+	display: inline-flex;
+}
+.layout.column {
+	display: flex;
+	flex-direction: column;
+}
+.layout.column.reverse {
+	flex-direction: column-reverse;
+}
+.layout.column.inline {
+	display: inline-flex;
+}
