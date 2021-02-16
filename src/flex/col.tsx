@@ -27,7 +27,7 @@ const Col = ({
 }: FlexProps) => {
 	Element = as;
 	return (
-		<div className={classNames(className, { inline, reverse, fluid }, 'column layout')} style={{ ...style, justifyContent, alignItems, alignContent, flexWrap: wrap, gap }}>
+		<div className={classNames(className, { inline, reverse, fluid }, 'col layout')} style={{ ...style, justifyContent, alignItems, alignContent, flexWrap: wrap, gap }}>
 			{children}
 		</div>
 	);
@@ -35,25 +35,37 @@ const Col = ({
 
 Col.item = Item;
 
-Col.grid = ({ className, children, style, as, ...props }: GridProps & ItemProps) => {
+Col.grid = ({ className, children, style, alignSelf, basis, grow, order, shrink, ...props }: GridProps & ItemProps) => {
 	return (
-		<Grid className={className} style={{ ...style, ...props }}>
+		<Grid
+			className={className}
+			style={{ ...style, alignSelf, flexBasis: basis, flexGrow: grow, flexShrink: shrink, order }}
+			{...props}
+		>
 			{children}
 		</Grid>
 	)
 }
 
-Col.row = ({ className, children, style, as, wrap, justifyContent, alignContent, alignItems, inline, reverse, gap, fluid, ...props }: FlexProps & ItemProps) => {
+Col.row = ({ className, children, style, alignSelf, basis, grow, order, shrink, ...props }: FlexProps & ItemProps) => {
 	return (
-		<Row className={className} style={{ ...style, ...props, flexWrap: wrap }}>
+		<Row
+			className={className}
+			style={{ ...style, alignSelf, flexBasis: basis, flexGrow: grow, flexShrink: shrink, order }}
+			{...props}
+		>
 			{children}
 		</Row>
 	)
 }
 
-Col.col = ({ className, children, style, as, justifyContent, alignContent, alignItems, inline, reverse, wrap, gap, fluid, ...props }: FlexProps & ItemProps) => {
+Col.col = ({ className, children, style, alignSelf, basis, grow, order, shrink, ...props }: FlexProps & ItemProps) => {
 	return (
-		<Col className={className} justifyContent={justifyContent} alignContent={alignContent} alignItems={alignItems} inline={inline} reverse={reverse} wrap={wrap} gap={gap} fluid={fluid} style={{ ...style, ...props }}>
+		<Col
+			className={className}
+			style={{ ...style, alignSelf, flexBasis: basis, flexGrow: grow, flexShrink: shrink, order }}
+			{...props}
+		>
 			{children}
 		</Col>
 	)

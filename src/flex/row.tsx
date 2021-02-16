@@ -35,25 +35,37 @@ const Row = ({
 
 Row.item = Item;
 
-Row.grid = ({ className, children, style, as, ...props }: GridProps & ItemProps) => {
+Row.grid = ({ className, children, style, alignSelf, basis, grow, order, shrink, ...props }: GridProps & ItemProps) => {
 	return (
-		<Grid className={className} style={{ ...style, ...props }}>
+		<Grid
+			className={className}
+			style={{ ...style, alignSelf, flexBasis: basis, flexGrow: grow, flexShrink: shrink, order }}
+			{...props}
+		>
 			{children}
 		</Grid>
 	)
 }
 
-Row.row = ({ className, children, style, as, wrap, justifyContent, alignContent, alignItems, inline, reverse, gap, fluid, ...props }: FlexProps & ItemProps) => {
+Row.row = ({ className, children, style, alignSelf, basis, grow, order, shrink, ...props }: FlexProps & ItemProps) => {
 	return (
-		<Row className={className} style={{ ...style, ...props, flexWrap: wrap }}>
+		<Row
+			className={className}
+			style={{ ...style, alignSelf, flexBasis: basis, flexGrow: grow, flexShrink: shrink, order }}
+			{...props}
+		>
 			{children}
 		</Row>
 	)
 }
 
-Row.col = ({ className, children, style, as, justifyContent, alignContent, alignItems, inline, reverse, wrap, gap, fluid, ...props }: FlexProps & ItemProps) => {
+Row.col = ({ className, children, style, alignSelf, basis, grow, order, shrink, ...props }: FlexProps & ItemProps) => {
 	return (
-		<Col className={className} justifyContent={justifyContent} alignContent={alignContent} alignItems={alignItems} inline={inline} reverse={reverse} wrap={wrap} gap={gap} fluid={fluid} style={{ ...style, ...props }}>
+		<Col
+			className={className}
+			style={{ ...style, alignSelf, flexBasis: basis, flexGrow: grow, flexShrink: shrink, order }}
+			{...props}
+		>
 			{children}
 		</Col>
 	)
