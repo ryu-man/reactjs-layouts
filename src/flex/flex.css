@@ -7,13 +7,13 @@
 .layout.row.inline {
 	display: inline-flex;
 }
-.layout.column {
+.layout.col {
 	display: flex;
 	flex-direction: column;
 }
-.layout.column.reverse {
+.layout.col.reverse {
 	flex-direction: column-reverse;
 }
-.layout.column.inline {
+.layout.col.inline {
 	display: inline-flex;
 }
