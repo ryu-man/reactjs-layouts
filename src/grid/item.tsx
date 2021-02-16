@@ -1,4 +1,5 @@
 import React from "react";
+import {classNames} from '../utils'
 import { ItemProps } from './props.item'
 
 let Element = "div";
@@ -10,7 +11,7 @@ const Item = ({
 	alignSelf, area, col, colEnd, colStart, justifySelf, row, rowEnd, rowStart
 }: ItemProps) => {
 	// Element = as;
-	return <div className={className} style={{
+	return <div className={classNames(className, 'grid-item')} style={{
 		...style,
 		alignSelf,
 		justifySelf,
