@@ -1,46 +1,199 @@
-# Getting Started with Create React App
+<p>
+	<img alt="LAYOUTS" src="./banner.png">
+  <br>
+  <a href="https://www.npmjs.com/package/react-layouts">
+    <img src="https://img.shields.io/npm/v/react-layouts.svg" alt="npm version">
+  </a>
+  <a href="https://github.com/ryu-man/layouts/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/react-layouts.svg" alt="license">
+  </a>
+<a href="https://bundlephobia.com/result?p=svelte-layouts">
+  <img src="https://img.shields.io/bundlephobia/min/react-layouts"/>
+</a>
+  <a href="https://bundlephobia.com/result?p=svelte-layouts">
+    <img src="https://badgen.net/bundlephobia/minzip/react-layouts">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</p>
 
-## Available Scripts
+# Layouts
 
-In the project directory, you can run:
+This project is an implementation of css Flexbox & Grid for [React](https://reactjs.org/) library
 
-### `yarn start`
+## Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+// npm
+npm install react-layouts
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+// yarn
+yarn add react-layouts
+```
 
-### `yarn test`
+## Get started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Layouts have three main components: Row, Col (Column) and Grid.
 
-### `yarn build`
+_Note: react-layouts support type definitions_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Row / Col
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```js
+    import { Row, Col } from 'react-layouts'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    const Component = ()=>{
+        return (
+            <>
+                // control how elements are positioned horizontally
+                <Row justifyContent="space-between"></Row>
+                
+                <Col></Col>
+            </>
+        )
+    }
 
-### `yarn eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Prop           | Type    |
+| -------------- | ------- |
+| justifyContent | string  |
+| alignItems     | string  |
+| alignContent   | string  |
+| wrap           | string  |
+| inline         | boolean |
+| reverse        | boolean |
+| alignSelf      | string  |
+| gap            | string  |
+| fluid          | string  |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Grid
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+    import { Grid } from 'react-layouts'
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    const Component = ()=>{
+        return (
+            // Define the number & width of rows and columns
+            <Grid templateRows="auto" templateCols="20vw 1fr"></Grid>
+        )
+    }
+```
+
+| Prop           | Type    |
+| -------------- | ------- |
+| templateCols   | string  |
+| templateRows   | string  |
+| templateAreas  | string  |
+| colGap         | string  |
+| rowGap         | string  |
+| autoCols       | string  |
+| autoRows       | string  |
+| justifyContent | string  |
+| alignItems     | string  |
+| alignContent   | string  |
+| alignSelf      | string  |
+| wrap           | string  |
+| inline         | boolean |
+| reverse        | boolean |
+| fluid          | string  |
+
+## Content
+
+As You can use any HTML element in the content you can also use predefined items which let you have more control over the element directly
+
+```jsx
+import { Row } from 'react-layouts'
+
+const Component = ()=>{
+    return (
+        <Row>
+            // Create div element
+            // can't control directly
+            <div></div>
+
+            // Create a div item
+            // you can use content props only
+            <Row.item></Row.item>
+
+            // Create a row item
+            // you can use Row props + content props
+            <Row.row></Row.row>
+
+            // Create a Col item
+            // you can use Column props + content props
+            <Row.col></Row.col>
+
+            // Create a grid item
+            // you can use Grid props + content props
+            <Row.grid></Row.grid>
+        </Row>
+    )
+}
+```
+
+### Row/Col Content Props
+
+| Prop      | Type   |
+| --------- | ------ |
+| order     | string |
+| grow      | string |
+| shrink    | string |
+| basis     | string |
+| alignSelf | string |
+
+```jsx
+    import { Grid } from 'react-layouts'
+
+    const Component = ()=>{
+        return (
+            <Grid>
+                // Create div element, can't controls directly
+                // can't control directly
+                <div></div>
+            
+                // Create a div item
+                // you can use content props only
+                <Grid.item></Grid.item>
+            
+                // Create a row item 
+                // you can use Row props + content props
+                <Grid.row></Grid.row>
+            
+                // Create a column item
+                // you can use Column props + content props
+                <Grid.col></Grid.col>
+            
+                // Create a grid item 
+                // you can use Grid props + content props
+                <Grid.grid></Grid.grid>
+            </Grid>
+        )
+    }
+```
+
+## Grid Content Props
+
+| Prop        | Type    |
+| ----------- | ------- |
+| justifySelf | string  |
+| alignSelf   | string  |
+| colStart    | string  |
+| colEnd      | boolean |
+| rowStart    | boolean |
+| rowEnd      | string  |
+| col         | string  |
+| row         | string  |
+| area        | string  |
+| fluid       | string  |
+
+## License
+
+svelte-layouts is [MIT Licenced](./LICENSE)
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+if you want to learn more about css flexbox and grid and how they works, you can feel free to check out these useful links:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+  
