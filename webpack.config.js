@@ -1,4 +1,5 @@
 const path = require("path");
+const css = require("mini-css-extract-plugin");
 
 module.exports = {
 	entry: path.resolve(__dirname, "src", "index.ts"),
@@ -6,9 +7,10 @@ module.exports = {
 		filename: "index.js",
 		path: path.resolve(__dirname, "dist"),
 		libraryTarget: "umd",
-        library: "react-layouts"
+		library: "react-layouts",
 	},
 	mode: "production",
+	plugins: [new css({filename:"index.css"})],
 	module: {
 		rules: [
 			{
@@ -18,7 +20,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/i,
-				use: ["style-loader", "css-loader"],
+				use: [css.loader, "css-loader"],
 			},
 			{
 				test: /\.tsx?$/,
