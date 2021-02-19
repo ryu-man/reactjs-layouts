@@ -1,17 +1,17 @@
 <p>
 	<img alt="LAYOUTS" src="./banner.png">
   <br>
-  <a href="https://www.npmjs.com/package/react-layouts">
-    <img src="https://img.shields.io/npm/v/react-layouts.svg" alt="npm version">
+  <a href="https://www.npmjs.com/package/reactjs-layouts">
+    <img src="https://img.shields.io/npm/v/reactjs-layouts.svg" alt="npm version">
   </a>
-  <a href="https://github.com/ryu-man/layouts/blob/main/LICENSE">
-    <img src="https://img.shields.io/npm/l/react-layouts.svg" alt="license">
+  <a href="https://github.com/ryu-man/reactjs-layouts/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/reactjs-layouts.svg" alt="license">
   </a>
-<a href="https://bundlephobia.com/result?p=svelte-layouts">
-  <img src="https://img.shields.io/bundlephobia/min/react-layouts"/>
+<a href="https://bundlephobia.com/result?p=reactjs-layouts">
+  <img src="https://img.shields.io/bundlephobia/min/reactjs-layouts"/>
 </a>
-  <a href="https://bundlephobia.com/result?p=svelte-layouts">
-    <img src="https://badgen.net/bundlephobia/minzip/react-layouts">
+  <a href="https://bundlephobia.com/result?p=reactjs-layouts">
+    <img src="https://badgen.net/bundlephobia/minzip/reactjs-layouts">
   </a>
 
 </p>
@@ -24,10 +24,10 @@ This project is an implementation of css Flexbox & Grid for [React](https://reac
 
 ```bash
 // npm
-npm install react-layouts
+npm install reactjs-layouts
 
 // yarn
-yarn add react-layouts
+yarn add reactjs-layouts
 ```
 
 ## Get started
@@ -39,7 +39,7 @@ _Note: react-layouts support type definitions_
 ## Row / Col
 
 ```js
-    import { Row, Col } from 'react-layouts'
+    import { Row, Col } from 'reactjs-layouts'
 
     const Component = ()=>{
         return (
@@ -69,7 +69,7 @@ _Note: react-layouts support type definitions_
 ## Grid
 
 ```js
-    import { Grid } from 'react-layouts'
+    import { Grid } from 'reactjs-layouts'
 
     const Component = ()=>{
         return (
@@ -102,7 +102,7 @@ _Note: react-layouts support type definitions_
 As You can use any HTML element in the content you can also use predefined items which let you have more control over the element directly
 
 ```jsx
-import { Row } from 'react-layouts'
+import { Row } from 'reactjs-layouts'
 
 const Component = ()=>{
     return (
@@ -142,7 +142,7 @@ const Component = ()=>{
 | alignSelf | string |
 
 ```jsx
-    import { Grid } from 'react-layouts'
+    import { Grid } from 'reactjs-layouts'
 
     const Component = ()=>{
         return (
