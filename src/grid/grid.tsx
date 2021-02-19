@@ -6,6 +6,7 @@ import { ItemProps } from './props.item'
 import { Col } from "../flex";
 import { Row } from "../flex";
 import { FlexProps } from "../flex/props.flex";
+import './grid.css'
 
 let Element = "div";
 

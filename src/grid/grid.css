@@ -1,0 +1,9 @@
+.layout.grid {
+	display: grid;
+}
+.layout.grid.reverse {
+	grid-auto-flow: dense;
+}
+.layout.grid.inline {
+	display: inline-grid;
+}
