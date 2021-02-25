@@ -1,7 +1,7 @@
 import React from "react";
-import Item from './item'
-import Row from './row'
-import Grid, { GridProps } from '../grid'
+import { Item } from './item'
+import { Row } from './row'
+import { Grid, GridProps } from '../grid'
 
 import { classNames } from '../utils'
 import { FlexProps } from './props.flex'
@@ -9,9 +9,8 @@ import { ItemProps } from './props.item'
 
 import './flex.css'
 
-let Element = "div";
 
-const Col = ({
+export const Col = ({
 	className,
 	as = "div",
 	children,
@@ -25,7 +24,6 @@ const Col = ({
 	gap,
 	fluid = false,
 }: FlexProps) => {
-	Element = as;
 	return (
 		<div className={classNames(className, { inline, reverse, fluid }, 'col layout')} style={{ ...style, justifyContent, alignItems, alignContent, flexWrap: wrap, gap }}>
 			{children}
@@ -70,5 +68,3 @@ Col.col = ({ className, children, style, alignSelf, basis, grow, order, shrink, 
 		</Col>
 	)
 };
-
-export default Col

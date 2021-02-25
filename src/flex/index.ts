@@ -1,3 +1,3 @@
-export { default as Row } from './row'
-export { default as Col } from './col'
-export { default as Item } from './item'
+export { Row } from "./row";
+export { Col } from "./col";
+export { Item } from "./item";

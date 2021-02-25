@@ -2,15 +2,13 @@ import React from "react";
 import {classNames} from '../utils'
 import { ItemProps } from './props.item'
 
-let Element = "div";
 
-const Item = ({
+export const Item = ({
 	className,
 	style,
 	children,
 	alignSelf, area, col, colEnd, colStart, justifySelf, row, rowEnd, rowStart
 }: ItemProps) => {
-	// Element = as;
 	return <div className={classNames(className, 'grid-item')} style={{
 		...style,
 		alignSelf,
@@ -26,5 +24,3 @@ const Item = ({
 		{children}
 	</div>;
 };
-
-export default Item

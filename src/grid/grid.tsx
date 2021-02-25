@@ -1,5 +1,5 @@
 import React from "react";
-import Item from './item'
+import {Item} from './item'
 import { classNames } from "../utils";
 import { GridProps } from './props.grid'
 import { ItemProps } from './props.item'
@@ -8,9 +8,8 @@ import { Row } from "../flex";
 import { FlexProps } from "../flex/props.flex";
 import './grid.css'
 
-let Element = "div";
 
-const Grid = ({
+export const Grid = ({
 	className,
 	as = "div",
 	children,
@@ -30,7 +29,6 @@ const Grid = ({
 	fluid,
 	style
 }: GridProps) => {
-	Element = as;
 	return <div className={classNames(className, { inline, reverse, fluid }, 'grid layout')} style={{ ...style, gridTemplateRows: templateRows, gridTemplateColumns: templateCols, gridTemplateAreas: templateAreas, columnGap: colGap, rowGap, gridAutoColumns: autoCols, gridAutoRows: autoRows, justifyContent, alignItems, alignContent, flexWrap: wrap }}>{children}</div>;
 };
 
@@ -98,5 +96,3 @@ Grid.col = ({ className, as, children, style, col, colStart, colEnd, row, rowSta
 		</Col>
 	)
 }
-
-export default Grid
