@@ -6,6 +6,7 @@
 	"types": "@types/index.d.ts",
 	"files": [
 		"dist",
+		"src",
 		"@types"
 	],
 	"description": "Easly structure your page using components",
