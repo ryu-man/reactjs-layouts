@@ -6,6 +6,7 @@
 .pnp.js
 /example
 /@types
+/dist
 # testing
 /coverage
 
